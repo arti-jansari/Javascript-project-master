@@ -1,0 +1,89 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  font-size: xx-large;
+  font-weight: 700;
+  margin-top: 35px;
+  color: white;
+}
+
+#dayIntro {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border-radius: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 15px;
+  background-color: #ffeb3b;
+  margin-top: 60px;
+}
+
+.container {
+  height: 120px;
+  width: 550px;
+  position: relative;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 10px;
+  cursor: default;
+  margin: 100px auto;
+
+}
+
+.container .dispClock,
+.container {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container .dispClock {
+  top: 50%;
+  height: 105px;
+  width: 535px;
+  background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+   border-radius: 6px;
+  text-align: center;
+}
+
+.dispClock #time {
+  line-height: 85px;
+  color: #fff;
+  font-size: 70px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+
+
+} 

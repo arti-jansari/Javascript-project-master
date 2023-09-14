@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+ <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>DIGITAL CLOCK</h1>
+            <div id="dayIntro">
+                <p id="dayName"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="dispClock">
+                <div id="time"></div>
+            </div>
+        </div>
+    </div>          
+        
+   
+</div>
+
+
+   
+
+
+
+
+
+    <script>
+        setInterval(currentTime, 1000);
+
+        function currentTime() {
+            let time = new Date();
+            let dayName = time.getDay();
+            let month = time.getMonth();
+            let year = time.getFullYear();
+            let date = time.getDate();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+
+            var am_pm = "AM";
+            if (hour == 12)
+                am_pm = "PM";
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "PM";
+            }
+            if (hour == 0) {
+                hour = 12;
+                am_pm = "AM";
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            //value of current time
+            let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
+
+            // value of present day(Day, Month, Year)
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            var presentDay = week[dayName] + ", " + months[month] + " " + date + ", " + year;
+
+            const clock = document.getElementById("time");
+            const dayIntro = document.getElementById("dayName");
+
+            clock.innerHTML = currentTime;
+            dayIntro.innerHTML = presentDay;
+        }
+
+        currentTime();  //calling currentTime() function to initiate the process
+
+    </script>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+.container {
+    width:1200px;
+    margin:auto;
+    min-height: 100vh;
+}
+.carousel-item {
+    width: 100%;
+    height: 400px;
+    margin-right: 10px;
+    background: #8C8;
+}
+.carousel-inner {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: relative;
+  overflow: hidden; /* <===  */
+  border-radius: 15px;
+}
+
+    img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#carouselExampleControls{
+    margin: auto;
+}
+body {
+    background-image:url('../Javascript-project-master/backgroundimage.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+
+
+</head>
+<body>
+    <div class="container ">
+<div class="MainDiv d-flex justify-content-center align-items-center" style="height:140px;">
+    <h2 class="text-light">Javascript Projects</h2>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="../Javascript-project-master/Calculator/index.html">
+                <img src="../Javascript-project-master/clc.png" class=" w-100" alt="...">
+            </a>
+           
+          </div>
+          
+          <div class="carousel-item">
+            <a href="../Javascript-project-master/CRUD operation/index.html">
+                <img src="../Javascript-project-master/crud.png" class="w-100" alt="...">
+  
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="../Javascript-project-master/Digital clock/index.html">
+                <img src="../Javascript-project-master/digiclock.jpg" class="d-block w-100" alt="...">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="../Javascript-project-master/stopwatch/index.html">
+                <img src="../Javascript-project-master/stopwatct.jpg" class="d-block w-100" alt="...">
+
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="../Javascript-project-master/timer/index.html">
+                <img src="../Javascript-project-master/timr.png" class="d-block w-100" alt="...">
+
+            </a>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+</div>
+       
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    var myCarousel = document.querySelector('#myCarousel')
+    var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 2000,
+  wrap: false
+})
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CRUD operation</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>CRUD Operation</h1>
+      <input type="text" id="num1" placeholder="Enter Name" />
+
+      <input type="hidden" id="index" placeholder="index" />
+      <button onclick="Addition()" id="add">ADD</button>
+      <button onclick="updatenewvalue()" id="update" style="display: none">
+        UPDATE</button
+      ><br />
+      <input
+        type="search"
+        id="search"
+        onkeyup="searcharray()"
+        placeholder="Search value"
+      />
+      <table>
+        <thead>
+          <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script>
+      const ar = [];
+      function Addition() {
+        let num1 = document.getElementById("num1").value;
+
+        document.getElementById("num1").value = "";
+
+        if (num1 != "") {
+          ar.push(num1);
+        }
+        console.log(ar);
+        display();
+      }
+
+      function display() {
+        str = "";
+        ar.forEach(function (value, index) {
+          str += `<tr>
+                        <td>${index}</td>
+                        <td>${value}</td>
+                        <td><button onclick='updateValue(${index})'>UPDATE</button>
+                           <button onclick="deleteValue(${index})">DELETE</button></td>
+                        </tr>`;
+        });
+        document.getElementById("tbody").innerHTML = str;
+      }
+
+      function updateValue(index) {
+        document.getElementById("num1").value = ar[index];
+        document.getElementById("index").value = index;
+        document.getElementById("add").style.display = "none";
+        document.getElementById("update").style.display = "inline-block";
+      }
+
+      function updatenewvalue() {
+        let num1 = document.getElementById("num1").value;
+        let index = document.getElementById("index").value;
+        ar[index] = num1;
+        document.getElementById("add").style.display = "inline-block";
+        document.getElementById("update").style.display = "none";
+        document.getElementById("num1").value = "";
+        document.getElementById("index").value = "";
+        display();
+      }
+
+      function deleteValue(index) {
+        ar.splice(index, 1);
+        console.log(ar);
+        display();
+      }
+
+      function searcharray() {
+        let searchtxt = document.getElementById("search").value;
+
+        if (searchtxt != "") {
+          str = "";
+          ar.forEach(function (value, index) {
+            if (value.indexOf(searchtxt) > -1) {
+              str += `<tr>
+                                <td>${index}</td>
+                        <td>${value}</td>
+                        <td><button onclick='updateValue(${index})'>UPDATE</button>
+                         <button onclick="deleteValue(${index})">DELETE</button></td>
+                        </tr>`;
+            }
+          });
+          document.getElementById("tbody").innerHTML = str;
+        } else {
+          display();
+        }
+      }
+    </script>
+  </body>
+</html>

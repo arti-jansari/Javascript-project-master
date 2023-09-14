@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+}
+
+h2 {
+    text-align: center;
+}
+
+.box { 
+    margin: auto;
+       
+}
+h1 {
+    text-align: center;
+    font-size:xx-large;
+    font-weight: bolder;
+    margin: 100px;
+    text-transform: uppercase;
+
+}
+.stop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+
+button{
+    border: none;
+    background-color: black;
+    color: aliceblue;
+    padding: 5px 10px;
+    margin: 10px 4px;
+}
+button:hover {
+background-color: aliceblue;
+color: black;
+}
